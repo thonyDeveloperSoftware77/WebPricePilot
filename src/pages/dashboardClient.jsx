@@ -210,7 +210,7 @@ export default function DashboardClient() {
                         Registrate!
                     </h2>
                     <p>
-                        En PricePilot, entendemos que la búsqueda de juegos puede llevar tiempo y que es posible que desees seguir de cerca ciertos títulos. Por eso hemos creado la función de "Favoritos". Cuando te registres en PricePilot, podrás guardar tus juegos favoritos en tu lista personalizada.
+                        En PricePilot, entendemos que la búsqueda de juegos puede llevar tiempo y que es posible que desees seguir de cerca ciertos títulos. Por eso hemos creado la función de Favoritos para ti. Cuando te registres en PricePilot, podrás guardar tus juegos favoritos en tu lista personalizada.
                     </p>
                     <form onSubmit={ingresarUsuario}>
                         <div >
