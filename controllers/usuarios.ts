@@ -5,7 +5,7 @@ import { Usuario } from "../models/juegos";
 export async function getusuario() {
     if (auth.currentUser) {
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch('http://localhost:9000/api/usuarios', {
+        const response = await fetch('https://apiscrapperpricepilot.hop.sh/api/usuarios', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -30,7 +30,7 @@ export async function postusuario(id: string, nombre: string, email: string, fec
             fechaNacimiento: fechaNacimiento
         }
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch('http://localhost:9000/api/usuarios', {
+        const response = await fetch('https://apiscrapperpricepilot.hop.sh/api/usuarios', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -59,7 +59,7 @@ export async function putusuario(id: string, nombre: string, email: string, fech
             fechaNacimiento: fechaNacimiento
         }
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch(`http://localhost:9000/api/usuarios/${id}`, {
+        const response = await fetch(`https://apiscrapperpricepilot.hop.sh/api/usuarios/${id}`, {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -79,7 +79,7 @@ export async function putusuario(id: string, nombre: string, email: string, fech
 export async function deleteusuario(id: number) {
     if (auth.currentUser) {
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch(`http://localhost:9000/api/usuarios/${id}`, {
+        const response = await fetch(`https://apiscrapperpricepilot.hop.sh/api/usuarios/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,

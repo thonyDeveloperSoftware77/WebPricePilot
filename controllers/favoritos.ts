@@ -5,7 +5,7 @@ import { Favorito} from "../models/juegos";
 
 export async function getfavoritoUsuario(idUsuario: string) {
     if (idUsuario != undefined) {
-            const response = await fetch(`http://localhost:9000/api/favoritos/${idUsuario}`);
+            const response = await fetch(`https://apiscrapperpricepilot.hop.sh/api/favoritos/${idUsuario}`);
             const data = await response.json();
             return data;
       
@@ -18,7 +18,7 @@ export async function getfavoritoUsuario(idUsuario: string) {
 
 export async function getfavoritoJuego(idJuego: string) {
     if (idJuego != undefined) {
-            const response = await fetch(`http://localhost:9000/api/favoritos/juego/${idJuego}`);
+            const response = await fetch(`https://apiscrapperpricepilot.hop.sh/api/favoritos/juego/${idJuego}`);
             const data = await response.json();
             return data;
       
@@ -37,7 +37,7 @@ export async function postfavorito(idUsuario: string, idJuego: string) {
             idJuego: idJuego,
         }
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch('http://localhost:9000/api/favoritos', {
+        const response = await fetch('https://apiscrapperpricepilot.hop.sh/api/favoritos', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -65,7 +65,7 @@ export async function putfavorito(idUsuario: string, idJuego: string, id: number
 
         }
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch(`http://localhost:9000/api/favoritos/${id}`, {
+        const response = await fetch(`https://apiscrapperpricepilot.hop.sh/api/favoritos/${id}`, {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -85,7 +85,7 @@ export async function putfavorito(idUsuario: string, idJuego: string, id: number
 export async function deletefavorito(id: number) {
     if (auth.currentUser) {
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch(`http://localhost:9000/api/favoritos/${id}`, {
+        const response = await fetch(`https://apiscrapperpricepilot.hop.sh/api/favoritos/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,

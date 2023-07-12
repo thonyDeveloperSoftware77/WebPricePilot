@@ -3,7 +3,7 @@ import { getIdToken } from 'firebase/auth';
 import { Juego } from "../models/juegos";
 
 export async function getjuego() {
-        const response = await fetch('http://localhost:9000/api/juegos');
+        const response = await fetch('https://apiscrapperpricepilot.hop.sh/api/juegos');
         const data = await response.json();
         console.log("", data.Juegos);
         return data.Juegos;
@@ -12,7 +12,7 @@ export async function getjuego() {
 
 export async function getjuegoNombre(Nombre: string) {
     if (Nombre != undefined) {
-            const response = await fetch(`http://localhost:9000/api/juegos/${Nombre}`);
+            const response = await fetch(`https://apiscrapperpricepilot.hop.sh/api/juegos/${Nombre}`);
             const data = await response.json();
             return data;
       
@@ -34,7 +34,7 @@ export async function postjuego(nombre: string, precio: number, Image: string, l
             page: page
         }
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch('http://localhost:9000/api/juegos', {
+        const response = await fetch('https://apiscrapperpricepilot.hop.sh/api/juegos', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -64,7 +64,7 @@ export async function putjuego(id:number, nombre: string, precio: number, Image:
             page: page
         }
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch(`http://localhost:9000/api/juegos/${id}`, {
+        const response = await fetch(`https://apiscrapperpricepilot.hop.sh/api/juegos/${id}`, {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -84,7 +84,7 @@ export async function putjuego(id:number, nombre: string, precio: number, Image:
 export async function deletejuego(id: number) {
     if (auth.currentUser) {
         const token = await getIdToken(auth.currentUser);
-        const response = await fetch(`http://localhost:9000/api/juegos/${id}`, {
+        const response = await fetch(`https://apiscrapperpricepilot.hop.sh/api/juegos/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,

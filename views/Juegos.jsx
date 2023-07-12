@@ -2,11 +2,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useUser } from "../controllers/userProvider";
 
-//Importar librerias de PrimeReact
-import dynamic from 'next/dynamic';
-//Importar libreria de Apex chart con server side rending deshabilitado
-const ApexCharts = dynamic(() => import('react-apexcharts'), { ssr: false });
-
 import { MdOutlineFavoriteBorder } from "react-icons/md"
 //Libreria para el Slider
 import Slider from "react-slick";
@@ -367,14 +362,8 @@ export default function CategoriaNorma(props) {
                             No se encontraron más resultados
                         </h2>
                     </div>}
-
-
                 </>
             )}
-
-
-
-
         </>
     )
 }
