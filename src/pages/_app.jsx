@@ -70,7 +70,7 @@ function MyApp({ Component, pageProps }) {
             <div>
 
               <h2>Juegos</h2>
-              <a href='/dashboardPublic' >Los mejore Precios</a>
+              <Link href='/dashboardPublic' >Los mejore Precios</Link>
             </div>
 
           </div>
